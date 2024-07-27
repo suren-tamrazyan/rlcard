@@ -39,7 +39,7 @@ class OfcEnv(Env):
         Returns:
             observation (list)
         '''
-        legal_actions = OrderedDict({a for a in state['legal_actions']})
+        legal_actions = OrderedDict({a: None for a in state['legal_actions']})
         return {'obs': state['board_from_player'], 'legal_actions': legal_actions, 'raw_obs': state,
                 'raw_legal_actions': state['legal_actions_str'], 'action_record': self.action_recorder}
 
