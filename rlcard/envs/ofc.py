@@ -1,5 +1,6 @@
 from collections import OrderedDict
 
+import numpy as np
 from rl_card.ofcgame_rlcard import OfcGameRLCard
 
 from rlcard.envs import Env
@@ -49,7 +50,7 @@ class OfcEnv(Env):
         Returns:
             (list): Each entry corresponds to the payoff of one player
         '''
-        return self.game.get_payoffs()
+        return np.array(self.game.get_payoffs())
 
     def _decode_action(self, action_id):
         ''' Decode the action for applying to the game
